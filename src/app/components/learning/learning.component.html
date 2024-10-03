@@ -1,8 +1,7 @@
 <div class="container">
   <div class="card my-4 border-2 border-info shadow-lg rounded">
     <div class="card-header bg-primary">
-      <p class="card-text text-light fw-bold">No. curso: {{ courses.id }}</p>
-      <h2 class="card-text text-light fw-bold">Curso: {{ courses.name }}</h2>
+      <app-header-course [courses]="courses"></app-header-course>
     </div>
     <div class="p-2 bg-dark">
       <table class="table table-striped table-dark">
@@ -13,11 +12,7 @@
         </thead>
         <tbody>
           @for (item of courses.student; track $index) {
-          <tr>
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.surname }}</td>
-          </tr>
+            <tr student-item [item]="item"></tr>
           }
         </tbody>
       </table>
